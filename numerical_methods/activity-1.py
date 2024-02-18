@@ -24,17 +24,24 @@ def my_double_exp(x: float, n_terms: int) -> float:
 
 #Plot the Series
 def graph(func: Callable[[float, int], float], n: int):
-    angles = np.arange(-2*np.pi,2*np.pi,0.1)
+    test_x = np.arange(-5,5,0.1)
     fig, ax = plt.subplots()
 
     for i in range(n):
-        t_cos = [func(angle,i) for angle in angles]
-        ax.plot(angles,t_cos, label=f"{i+1} terms approximation")
+        approx_graphs = [func(x,i) for x in test_x]
+        ax.plot(test_x,approx_graphs, label=f"{i+1} terms approximation")
 
     ax.set_ylim([-5,5])
     ax.legend()
     plt.show()
     
+#Taylor Series Formula
+def taylor_series_expansion(f, a, x):
+    pass
+
+def taylor_series_approx(f,a,x):
+    pass
+
 if __name__ == "__main__":
     choice = int(sys.argv[3]) #Passes the third argument as choice on what function to use
     if choice == 0:
