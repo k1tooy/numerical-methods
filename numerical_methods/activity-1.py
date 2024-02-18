@@ -1,3 +1,4 @@
+from collections.abc import Callable
 import math
 import sys
 import matplotlib.pyplot as plt
@@ -22,14 +23,13 @@ def my_double_exp(x: float, n_terms: int) -> float:
     return result
 
 #Plot the Series
-def graph(func, n):
+def graph(func: Callable[[float, int], float], n: int):
     angles = np.arange(-2*np.pi,2*np.pi,0.1)
-
     fig, ax = plt.subplots()
 
     for i in range(n):
         t_cos = [func(angle,i) for angle in angles]
-        ax.plot(angles,t_cos, label=f"{i} terms approximation")
+        ax.plot(angles,t_cos, label=f"{i+1} terms approximation")
 
     ax.set_ylim([-5,5])
     ax.legend()
