@@ -22,15 +22,28 @@ def my_double_exp(x: float, n_terms: int) -> float:
     return result
 
 #Plot the Series
-def plot():
-    pass
+def graph(func, n):
+    angles = np.arange(-2*np.pi,2*np.pi,0.1)
 
+    fig, ax = plt.subplots()
+
+    for i in range(n):
+        t_cos = [func(angle,i) for angle in angles]
+        ax.plot(angles,t_cos, label=f"{i} terms approximation")
+
+    ax.set_ylim([-5,5])
+    ax.legend()
+    plt.show()
+    
 if __name__ == "__main__":
     choice = int(sys.argv[3]) #Passes the third argument as choice on what function to use
     if choice == 0:
-        approximation = func_sin(float(sys.argv[1]), 10)
+        approximation = func_sin(float(sys.argv[1]), int(sys.argv[2]))
         print(f"Linear Approximation: sin({sys.argv[1]}) = {approximation}")
         print(f"sin(x)/x = {approximation/float(sys.argv[1])}")
+
+        graph(func_sin, int(sys.argv[2]))
+
     if choice == 1:
         exp = my_double_exp(float(sys.argv[1]),int(sys.argv[2]))
         print(f"Linear Approximation: e^({sys.argv[1]}^2) = {exp}")
