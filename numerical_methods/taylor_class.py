@@ -1,3 +1,14 @@
+import sympy as smp
+import numpy as np
+import math
+
+class Taylor_Series:
+    def __init__(self,expr,x:float = 0,a:float=0,n:int=10) -> None:
+        self.expr = expr
+        self.x = x
+        self.a = a
+        self.n = n
+
     def get_approx(self):
         var = smp.symbols("x")
         result = 0
