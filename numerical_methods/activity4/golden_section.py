@@ -1,3 +1,4 @@
+# golden section algorithm to find the max of a function implemented using recursion
 def golden_section(func, a, b, tol) -> dict:
     # get them bounds right
     if a >= b:
@@ -10,7 +11,7 @@ def golden_section(func, a, b, tol) -> dict:
     x1 = a + d
     x2 = b - d
 
-    # for comparison with tolerance
+    # for comparison with respect to the tolerance
     c = abs(x1 - x2)
 
     # approximation of the maximum
