@@ -1,7 +1,18 @@
-# golden section algorithm to find the max of a function implemented using recursion
-def golden_section(func, a, b, tol) -> dict:
+def golden_section(func, a, b, tol) -> dict[float, float]:
+    """
+    Fnds the max of a function using golden section algorithm and returns the maximum x and f(x).
+
+    arguments:
+    func -- callable function to be used
+    a -- lower bound
+    b -- upper bound
+    tol -- tolerance
+
+    return: dict[float: float]
+    """
+
     # get them bounds right
-    if a >= b:
+    if a >= b:int
         raise ValueError("a must be smaller than b")
 
     phi = (1+ 5**0.5)/2
