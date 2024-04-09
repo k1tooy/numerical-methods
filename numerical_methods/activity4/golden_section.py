@@ -23,12 +23,11 @@ def golden_section(func, a, b, tol) -> dict:
     # recursive case
     else:
         if func(x1) > func(x2):
-            return golden_section(func, a, x2, tol)
+            return golden_section(func, x2, b, tol)
         elif func(x1) < func(x2):
-            return golden_section(func ,x1, b, tol)
+            return golden_section(func ,a, x1, tol)
 
 if __name__ == "__main__":
     # example function 
-    f = lambda x: x**2 - 6*x + 15
-
+    f = lambda x: -(x**2 - 6*x + 15)
     print(golden_section(f, 1, 4, 0.01))
