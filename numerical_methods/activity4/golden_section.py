@@ -1,6 +1,6 @@
 def golden_section(func, a, b, tol) -> dict[float, float]:
     """
-    Fnds the max of a function using golden section algorithm and returns the maximum x and f(x).
+    Finds the max of a function using golden section algorithm and returns the maximum x and f(x).
 
     arguments:
     func -- callable function to be used
@@ -8,7 +8,7 @@ def golden_section(func, a, b, tol) -> dict[float, float]:
     b -- upper bound
     tol -- tolerance
 
-    return: dict[float: float]
+    return: dict[x: float: f(x): float]
     """
 
     # get them bounds right
