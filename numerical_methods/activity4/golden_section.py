@@ -1,6 +1,6 @@
 def golden_section(func, a, b, tol) -> dict[float, float]:
     """
-    Finds the max of a function using golden section algorithm and returns the maximum x and f(x).
+    Finds min/max of a function using golden section algorithm and returns the min/max x and f(x).
 
     arguments:
     func -- callable function to be used
@@ -40,6 +40,8 @@ def golden_section(func, a, b, tol) -> dict[float, float]:
             return golden_section(func ,a, x1, tol)
 
 if __name__ == "__main__":
-    # example function 
+    # example function
+    # we enter the negative of the function since we are maximizing (reflecting across x-axis)
     f = lambda x: -(x**2 - 6*x + 15)
+
     print(golden_section(f, 1, 4, 0.01))
