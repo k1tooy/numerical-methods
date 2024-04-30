@@ -25,7 +25,9 @@ def my_newton(f, df, x0, tol, R=None, E=None):
         
         # Recursively call the function with updated lists R and E
         return my_newton(f, df, x0, tol, R, E)
-if __name__ == '__main__':
+
+if __name__ == "__main__":
+
     # Define the function and its derivative
     x = sp.Symbol('x')
     f = x**2 - 2  # Example function: f(x) = x^2 - 2
