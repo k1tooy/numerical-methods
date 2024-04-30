@@ -1,5 +1,5 @@
 # Numerical Methods For ECE Activities
-Mga kuan inen lods an activities ha numerical methods for ECE adi didin [dapit](numerical_methods/)
+Mga kuan inen lods an activities ha numerical methods for ECE adi didin [dapit](numerical_methods/).
 
 ## External Libraries
 The following libraries are used in this series of activities:
