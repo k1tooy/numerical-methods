@@ -1,10 +1,12 @@
-# Numerical Methods Activities
-Mga kuan haha compilation kanan numericals
+# Numerical Methods For ECE Activities
 
-Ig clone nala niyo or copy paste kun ano man
+## Project External Dependencies:
+- poetry
+- numpy
+- matplotlib
+- sympy
 
-# Project External Dependencies: 
-poetry
-numpy 
-matplotlib
-sympy
+### Installation of Libraries
+```bash
+pip install poetry matplotlib sympy
+```
