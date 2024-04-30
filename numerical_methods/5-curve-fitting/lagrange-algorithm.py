@@ -1,6 +1,6 @@
 # Tigamni la na it gamit hit curve fitting kay pagbiling hin function na maangay hit im set of points.
 # Bagat reverse engineering hit function bagat tibalik tim step
-# Di ba han algebra may function ka magbiling kan points pero didi kay baliktad given kan points tagi ak function sugad
+# Di ba han algebra may function ka magbiling kan points pero didi kay baliktad given kan points tagi ak function sugad shish
 
 def my_lagrange(x, y, X) -> float:
     """
@@ -34,4 +34,4 @@ if __name__ == "__main__":
     x = [1, 2, 3, 4, 5]
     y = [2, 4, 6, 8, 10]
     Y = my_lagrange(x, y, 9)
-    print(Y)  # should return float 18
+    print(Y)  # should return float value 18
