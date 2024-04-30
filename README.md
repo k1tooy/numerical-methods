@@ -1,6 +1,9 @@
 # Numerical Methods For ECE Activities
+Mga kuan inen lods an activities ha numerical methods for ECE
+Adi didin [dapit](numerical_methods/)
 
 ## External Libraries
+The following libraries are used in this series of activities:
 - [poetry](https://python-poetry.org/)
 - [numpy](https://numpy.org/)
 - [matplotlib](https://matplotlib.org/)
