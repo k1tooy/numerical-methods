@@ -12,7 +12,7 @@ def golden_section(func, a, b, tol) -> dict[float, float]:
     """
 
     # get them bounds right
-    if a >= b:int
+    if a >= b:
         raise ValueError("a must be smaller than b")
 
     phi = (1+ 5**0.5)/2
