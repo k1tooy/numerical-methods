@@ -4,7 +4,7 @@ Mga kuan inen lods an activities ha numerical methods for ECE adi didin [dapit](
 ## Activities For Finals
 - [Optimization](numerical_methods/4-optimization/)
   - [x] [Golden Section](numerical_methods/4-optimization/golden_section.py)
-  -[] [Non-Linear Programming]()
+  - [] [Non-Linear Programming]()
 - [Curve Fitting](numerical_methods/5-curve-fitting/)
   - [x] [Lagrange Algorithm](numerical_methods/5-curve-fitting/lagrange-algorithm.py)
   - [] [Regression](numerical_methods/5-curve-fitting/regression.py)
