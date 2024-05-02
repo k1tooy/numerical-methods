@@ -1,7 +1,7 @@
 # Numerical Methods For ECE Activities
 Mga kuan inen lods an activities ha numerical methods for ECE adi didin [dapit](numerical_methods/).
 
-# For Finals
+## Activities For Finals
 - [Optimization](numerical_methods/4-optimization/)
   - [x] [Golden Section](numerical_methods/4-optimization/golden_section.py)
   -[] [Non-Linear Programming]()
