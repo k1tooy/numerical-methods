@@ -15,7 +15,7 @@ def golden_section(func, a, b, tol) -> dict[float, float]:
     if a >= b:
         raise ValueError("a must be smaller than b")
 
-    phi = (1+ 5**0.5)/2
+    phi = (1 + 5**0.5)/2
     d = (phi - 1)*(b - a)
 
     # find new values
@@ -37,11 +37,12 @@ def golden_section(func, a, b, tol) -> dict[float, float]:
         if func(x1) > func(x2):
             return golden_section(func, x2, b, tol)
         elif func(x1) < func(x2):
-            return golden_section(func ,a, x1, tol)
+            return golden_section(func, a, x1, tol)
+
 
 if __name__ == "__main__":
     # example function
     # we enter the negative of the function since we are maximizing (reflecting across x-axis)
-    f = lambda x: -(x**2 - 6*x + 15)
+    def f(x): return -(x**2 - 6*x + 15)
 
     print(golden_section(f, 1, 4, 0.01))
