@@ -1,26 +1,47 @@
+import math
+
+
+def exp_function(x, alpha, beta):
+    return a * math.exp(beta * x)
+
+
+def mean(values):
+    return sum(values) / len(values)
+
+
+def covariance(x, y):
+    mean_x = mean(x)
+    mean_y = mean(y)
+    return sum((x[i] - mean_x) * (y[i] - mean_y) for i in range(len(x))) / len(x)
+
+
+def variance(values):
+    mean_val = mean(values)
+    return sum((x - mean_val) ** 2 for x in values) / len(values)
+
+
+def linear_regression(x, y):
+    beta = covariance(x, y) / variance(x)
+    alpha = mean(y) - beta * mean(x)
+    return alpha, beta
+
+
 def my_exp_regression(x, y):
-    sum_of_x = sum(x)
-    sum_of_y = sum(y)
-    sum_of_xy = sum(xy(x,y))
-    n = min(len(x), len(y))
-    
-    m_numerator = n*sum_of_xy - sum_of_x*sum_of_y
-    m_denominator = n*sum(square_of_x(x)) - (sum_of_x)**2
-    m = m_numerator/m_denominator
+    # Transform y values using natural logarithm
+    y_ln = [math.log(val) for val in y]
 
-    b = (sum_of_y - m*sum_of_x)/n
-    return f"y = {m}x + {b}"
+    # Perform linear regression: Y = alpha + beta * X
+    alpha, beta = linear_regression(x, y_ln)
 
-def xy(x,y):
-    result = []
-    for i in range(min(len(x), len(y))):
-        result.append(x[i]*y[i])
-    return result
+    # Compute estimated parameters a and beta
+    alpha = math.exp(alpha)
+    beta = beta
+    return alpha, beta
 
-def square_of_x(x):
-    return [i**2 for i in x]
 
-if __name__ == "__main__":
-    x = [1,2,3,4,5,6,7,8]
-    y = [2,4,6,8,10,12,14,16]
-    print(my_exp_regression(x,y))
+# Example usage:
+x = [0, 1, 2, 3, 4]
+y = [1, 2, 4, 8, 16]
+
+alpha, beta = my_exp_regression(x, y)
+print("Estimated parameters: alpha =", alpha, ", beta =", beta)
