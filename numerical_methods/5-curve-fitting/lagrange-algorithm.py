@@ -16,11 +16,11 @@ def my_lagrange(x, y, X) -> float:
     """
 
     Y = 0
-    # amo na inen dinhi an formula gud
+    # amo na inen dinhi an summation
     for n in range(len(x)):
         product = y[n]
         for i in range(len(x)):
-            # inen dinhi amo inen an bagat dako na pi ba
+            # inen dinhi amo inen an bagat dako na pi an "product of"
             if x[i] != x[n]:  # handle ZeroDivisionError
                 # make a polynomial function that is zero except at x-value in concern
                 numerator = X - x[i]
@@ -34,4 +34,4 @@ if __name__ == "__main__":
     x = [1, 2, 3, 4, 5]
     y = [2, 4, 6, 8, 10]
     Y = my_lagrange(x, y, 9)
-    print(Y)  # should return float value 18
+    print(Y)  # should return float value of 18

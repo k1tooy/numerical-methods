@@ -35,4 +35,3 @@ result = minimize(objective, initial_guess,
 # Print results
 print("Optimal solution:", result.x)
 print("Maximum value:", -result.fun)  # Negate the result for maximization
-
