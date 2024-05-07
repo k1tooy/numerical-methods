@@ -2,7 +2,7 @@ import math
 
 
 def exp_function(x, alpha, beta):
-    return a * math.exp(beta * x)
+    return alpha * math.exp(beta * x)
 
 
 def mean(values):
@@ -33,7 +33,7 @@ def my_exp_regression(x, y):
     # Perform linear regression: Y = alpha + beta * X
     alpha, beta = linear_regression(x, y_ln)
 
-    # Compute estimated parameters a and beta
+    # Compute estimated parameters alpha and beta
     alpha = math.exp(alpha)
     beta = beta
     return alpha, beta
