@@ -1,37 +1,25 @@
-import numpy as np
 from scipy.optimize import minimize
+import numpy as np
 
-# Objective function to maximize (negated for maximization)
+# Objective function
+def f(x):
+    return -1 * (15*x[0] + 15*x[1])  # Negative sign for maximization
 
-
-def objective(x):
-    return -(15*x[0] + 15*x[1])
-
-# Constraints
-
-
-def constraint1(x):
-    return x[0]**2 + x[1]**2 - 1  # x^2 + y^2 <= 1
+#Define Constraints
+cons = {'type': 'ineq',
+        'fun' : lambda x: np.array([1 - x[0]**2 - x[1]**2,  # x^2 + y^2 <= 1
+                                    2.1 - x[0] - 2*x[1]])}  # x + 2y <= 2.1
 
 
-def constraint2(x):
-    return x[0] + 2*x[1] - 2.1  # x + 2y <= 2.1
+# Define the bounds
+bnds = [(0, None), (0, None)]  # x >= 0, y >= 0
 
+#Initial Guess
+x0 = np.array([0, 0])
 
-# Initial guess as numpy array
-initial_guess = np.array([0, 0])
+solution = minimize(f, x0, method='SLSQP',constraints=cons, bounds=bnds)
 
-# Define bounds for variables
-bounds = ((0, None), (0, None))  # Non-negativity constraints
+print("x: ", solution.x[0])
+print("y: ", solution.x[1])
+print("f(x,y): ", -1 * f(solution.x))  # Multiply by -1 because we minimized -f(x,y)
 
-# Define constraints
-constraints = [{'type': 'ineq', 'fun': constraint1},
-               {'type': 'ineq', 'fun': constraint2}]
-
-# Perform optimization
-result = minimize(objective, initial_guess,
-                  bounds=bounds, constraints=constraints)
-
-# Print results
-print("Optimal solution:", result.x)
-print("Maximum value:", -result.fun)  # Negate the result for maximization
