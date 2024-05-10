@@ -1,8 +1,8 @@
 import math
 
 
-def exp_function(x, alpha, beta):
-    return alpha * math.exp(beta * x)
+def exp_function(x, a, beta):
+    return a * math.exp(beta * x)
 
 
 def mean(values):
@@ -33,15 +33,15 @@ def my_exp_regression(x, y):
     # Perform linear regression: Y = alpha + beta * X
     alpha, beta = linear_regression(x, y_ln)
 
-    # Compute estimated parameters alpha and beta
-    alpha = math.exp(alpha)
+    # Compute estimated parameters a and beta
+    a = math.exp(alpha)
     beta = beta
-    return alpha, beta
+    return a, beta
 
 
 # Example usage:
 x = [0, 1, 2, 3, 4]
 y = [1, 2, 4, 8, 16]
 
-alpha, beta = my_exp_regression(x, y)
-print("Estimated parameters: alpha =", alpha, ", beta =", beta)
+a, beta = my_exp_regression(x, y)
+print("Estimated parameters: a =", a, ", beta =", beta)
