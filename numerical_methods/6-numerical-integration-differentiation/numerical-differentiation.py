@@ -7,13 +7,13 @@ def my_num_diff(f, a, b, n, option):
 
     if option == "forward":
         dy = np.zeros(n - 1) # initialize correct length of the array for the derivatives
-        for i in range(n - 1): # cycle through the value
+        for i in range(n - 1): # cycle through the values until index n-1 for i+1
             dy[i] = (f(X[i+1]) - f(X[i])) / h # do forward method
 
     elif option == "backward":
         dy = np.zeros(n - 1)
-        for i in range(1, n):
-            dy[i - 1] = (f(X[i]) - f(X[i-1])) / h
+        for i in range(1, n): # cycle through values starting from index 1 not 0 for i-1
+            dy[i - 1] = (f(X[i]) - f(X[i-1])) / h # do backward method
 
     elif option == "central":
         dy = np.zeros(n - 2)
@@ -38,4 +38,3 @@ if __name__ == "__main__":
     # Compute numerical derivative using central difference method
     dy, X = my_num_diff(f, 0, 1, 6, "central")
     print(f"dy = {dy}, X = {X}")
-
