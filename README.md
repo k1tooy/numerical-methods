@@ -18,11 +18,12 @@ The following libraries are used in this series of activities:
 - [numpy](https://numpy.org/)
 - [matplotlib](https://matplotlib.org/)
 - [sympy](https://www.sympy.org/en/index.html)
+- [scipy](https://docs.scipy.org/doc//scipy/index.html)
 
 ## Installation of Libraries
 Make sure you have [pip](https://python-poetry.org/) installed
 ```bash
-pip install matplotlib sympy numpy
+pip install matplotlib sympy numpy scipy
 ```
 
 ```bash
