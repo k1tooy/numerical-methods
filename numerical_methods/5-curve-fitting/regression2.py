@@ -30,7 +30,7 @@ def my_exp_regression(x, y):
     # Transform y values using natural logarithm
     y_ln = [math.log(val) for val in y]
 
-    # Perform linear regression: Y = alpha + beta * X
+    # Perform least squares regression: Y = alpha + beta * X
     alpha, beta = least_square_regression(x, y_ln)
 
     # Compute estimated parameters a and beta
@@ -38,10 +38,10 @@ def my_exp_regression(x, y):
     beta = beta
     return a, beta
 
+if __name__ == "__main__":
+    # Example usage:
+    x = [1, 2, 3, 4, 5]
+    y = [3, 5, 7, 9, 11]
 
-# Example usage:
-x = [1, 2, 3, 4, 5]
-y = [3, 5, 7, 9, 11]
-
-a, beta = my_exp_regression(x, y)
-print("Estimated parameters: a =", a, ", beta =", beta)
+    a, beta = my_exp_regression(x, y)
+    print("Estimated parameters: a =", a, ", beta =", beta)
