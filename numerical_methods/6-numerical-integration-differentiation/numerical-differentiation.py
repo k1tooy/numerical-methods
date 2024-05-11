@@ -4,6 +4,7 @@ import numpy as np
 def my_num_diff(f, a, b, n, option):
     h = (b - a) / (n - 1)  # define value of h
     X = np.linspace(a, b, n)  # initiate values
+    print(f"")
 
     if option == "forward":
         dy = np.zeros(n - 1) # initialize correct length of the array for the derivatives
@@ -29,12 +30,12 @@ if __name__ == "__main__":
 
     # Compute numerical derivative using forward difference method
     dy, X = my_num_diff(f, 0, 1, 6, "forward")
-    print(f"dy = {dy}, X = {X}")
+    print(f"X = {X}, dy = {dy}")
 
     # Compute numerical derivative using backward difference method
     dy, X = my_num_diff(f, 0, 1, 6, "backward")
-    print(f"dy = {dy}, X = {X}")
+    print(f"X = {X}, dy = {dy}")
 
     # Compute numerical derivative using central difference method
     dy, X = my_num_diff(f, 0, 1, 6, "central")
-    print(f"dy = {dy}, X = {X}")
+    print(f"X = {X}, dy = {dy}")
