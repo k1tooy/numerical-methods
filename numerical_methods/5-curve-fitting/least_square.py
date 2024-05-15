@@ -22,4 +22,4 @@ def exp_function(x, a, beta):
     return a * math.exp(beta * x)
 
 if __name__ == "__main__":
-    pass
+    x = []
