@@ -1,5 +1,5 @@
 # Numerical Methods For ECE Activities
-Mga kuan inen lods an activities ha numerical methods for ECE adi didin [dapit](numerical_methods/).
+Compilation of numerical methods for ECE laboratory [activities](numerical_methods/).
 
 ## Activities For Finals
 - [Optimization](numerical_methods/4-optimization/)
@@ -29,3 +29,8 @@ pip install matplotlib sympy numpy scipy
 ```bash
 pip install poetry # optional for dependency and environment management
 ```
+
+## Possible Finals
+- graphing curve fitting functions
+- solve LP problems and probably graph also (?)
+- use golden-section for optimization and graph the function
